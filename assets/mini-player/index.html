@@ -467,6 +467,11 @@
         render();
       });
 
+      // Only sent on platforms where BrowserWindow.setOpacity does nothing.
+      api.on('mini-player:config', ({ opacity }) => {
+        el.bar.style.opacity = String(opacity);
+      });
+
       // --- interactions ------------------------------------------------
 
       document.querySelectorAll('[data-action]').forEach((button) => {

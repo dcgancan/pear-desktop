@@ -1,6 +1,7 @@
 import MiniPlayerHtml from '@assets/mini-player/index.html?asset';
 import MiniPlayerPreload from '@assets/mini-player/preload.cjs?asset';
 import { BrowserWindow, ipcMain, screen } from 'electron';
+import is from 'electron-is';
 import localShortcut from 'electron-localshortcut';
 
 import { getSongControls } from '@/providers/song-controls';
@@ -123,9 +124,14 @@ const applyOpacity = (isHovered = false) => {
     return;
   }
 
-  miniWindow!.setOpacity(
-    isHovered && config.opaqueOnHover ? 1 : config.opacity,
-  );
+  const opacity = isHovered && config.opaqueOnHover ? 1 : config.opacity;
+
+  if (is.linux()) {
+    // `setOpacity` is a no-op on Linux, so fade the card in CSS instead.
+    miniWindow!.webContents.send('mini-player:config', { opacity });
+  } else {
+    miniWindow!.setOpacity(opacity);
+  }
 };
 
 const applyAlwaysOnTop = () => {
@@ -345,7 +351,10 @@ const onControl = (
 const onHover = (_: Electron.IpcMainEvent, isHovered: boolean) =>
   applyOpacity(isHovered);
 
-const onReady = () => pushState();
+const onReady = () => {
+  pushState();
+  applyOpacity();
+};
 
 export const onMainLoad = async ({
   window,
