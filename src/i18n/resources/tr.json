@@ -614,6 +614,35 @@
         "fetched-lyrics": "Şarkı sözleri genius tarafından alındı"
       }
     },
+    "mini-player": {
+      "description": "Albüm kapağı, şarkı bilgisi ve kontrollerden oluşan, her zaman üstte duran küçük bir oynatıcı ekler",
+      "menu": {
+        "always-on-top": "Her zaman üstte",
+        "close": "Mini oynatıcıyı kapat",
+        "hide-main-window": "Açıkken ana pencereyi gizle",
+        "hotkey": {
+          "label": "Kısayol tuşu",
+          "prompt": {
+            "keybind-options": {
+              "hotkey": "Kısayol tuşu"
+            },
+            "label": "Mini oynatıcıyı açıp kapatmak için bir kısayol seçin",
+            "title": "Mini Oynatıcı Kısayolu"
+          }
+        },
+        "opacity": {
+          "label": "Saydamlık",
+          "submenu": {
+            "percent": "%{{opacity}}"
+          }
+        },
+        "opaque-on-hover": "Üzerine gelince tam opak",
+        "open": "Mini oynatıcıyı aç",
+        "open-on-start": "Açılışta başlat",
+        "reset-position": "Konumu ve boyutu sıfırla"
+      },
+      "name": "Mini Oynatıcı"
+    },
     "music-together": {
       "description": "Oynatma listesini başkalarıyla paylaşın. Sunucu sahibi bir şarkı çaldığında, diğer herkes aynı şarkıyı duyacak",
       "dialog": {
