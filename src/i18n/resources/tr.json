@@ -641,7 +641,10 @@
         "open-on-start": "Açılışta başlat",
         "reset-position": "Konumu ve boyutu sıfırla"
       },
-      "name": "Mini Oynatıcı"
+      "name": "Mini Oynatıcı",
+      "templates": {
+        "button": "Mini oynatıcı"
+      }
     },
     "music-together": {
       "description": "Oynatma listesini başkalarıyla paylaşın. Sunucu sahibi bir şarkı çaldığında, diğer herkes aynı şarkıyı duyacak",
